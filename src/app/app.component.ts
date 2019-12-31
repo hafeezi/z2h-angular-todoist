@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Todo } from './models/todo.model';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,7 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  todos: Array<any>;
+  todos: Array<Todo>;
 
   ngOnInit() {
     this.todos = [];
@@ -15,7 +16,7 @@ export class AppComponent {
 
   addTodo(f) {
     if (f.valid) {
-      this.todos.push({ todo: f.value.todo, duedate: f.value.duedate, done: false })
+      this.todos.push({ task: f.value.todo, duedate: f.value.duedate, done: false })
     }
   }
 
