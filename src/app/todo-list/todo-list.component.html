@@ -1,0 +1,22 @@
+<div class="row justify-content-md-center">
+    <div class="col-md-8">
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Due Date</th>
+                    <th>Done</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let todo of todos">
+                    <td>{{todo.task}}</td>
+                    <td>{{todo.duedate | date: "dd MMM yyyy"}}</td>
+                    <td><input type="checkbox" [checked]="todo.done"></td>
+                    <td><button class="btn btn-warning" (click)="onDelete(todo)">Delete</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
